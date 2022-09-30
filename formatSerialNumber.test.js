@@ -36,4 +36,14 @@ describe("formatSerialNumber", () => {
   it("returns a output with eight characters, a few dashes, uppercase and lowercase and 4 length", () => {
     expect(formatSerialNumber("14k-9-b", 2)).toEqual("1-4K-9B");
   });
+
+  it("returns a output with eight characters, a few dashes, uppercase and lowercase and 4 length", () => {
+    expect(formatSerialNumber("14k-9-b", 2)).toEqual("1-4K-9B");
+  });
+
+  it("returns a error message when there is a invalid character in the input", () => {
+    expect(formatSerialNumber("14k-9-@", 2)).toEqual(
+      "Incorrect character entered"
+    );
+  });
 });
