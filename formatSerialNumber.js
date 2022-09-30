@@ -1,5 +1,6 @@
 const formatSerialNumber = (serial, length) => {
   const removeDash = serial.replace(/-/g, "");
+
   if (removeDash.length == 1) {
     return removeDash.toUpperCase();
   } else if (removeDash.match(/[!@#$%^&*()_+\=\[\]{};':"\\|,.<>\/?]+/)) {
@@ -7,6 +8,7 @@ const formatSerialNumber = (serial, length) => {
   }
 
   const even = removeDash.length % 2 == 0;
+
   const prefix = (!even && removeDash[0] + "-") || "";
   var output = (even && removeDash) || removeDash.slice(1, removeDash.length);
   output = output
